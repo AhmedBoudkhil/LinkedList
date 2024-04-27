@@ -19,6 +19,14 @@ void addFirst(node **head, node *newNode){
     retur head;
 }
 
+node *addlast(node *head, node *newNode){
+    node *tmp = head;
+    while(tmp->link != NULL){
+        tmp = tmp->link;
+    }
+    tmp->link = newNode;
+}
+
 node *AddNewNode(node *head,node *newNode,int pos){
     node *tracker  = head;
     pos -= 1;
