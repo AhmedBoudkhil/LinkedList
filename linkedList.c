@@ -16,23 +16,19 @@ node *createNewNode(int data){
 void addFirst(node **head, node *newNode){
     newNode->link = *head;
     *head = newNode;
+    retur head;
 }
 
 node *AddNewNode(node *head,node *newNode,int pos){
-    if(pos == 1){
-        addFirst(&head,newNode);
-    }else{
-        node *tracker  = head;
-        pos -= 1;
-        while(pos != 1){
-            tracker = tracker->link;
-            pos--;
-            
-        }
-        newNode->link = tracker->link;
-        tracker->link = newNode;
-        
+    node *tracker  = head;
+    pos -= 1;
+    while(pos != 1){
+        tracker = tracker->link;
+        pos--;
     }
+    newNode->link = tracker->link;
+    tracker->link = newNode;
+
     
 }
 void printLinkedList(node *first){
